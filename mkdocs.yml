@@ -3,7 +3,7 @@ edit_uri: edit/main/docs/
 nav:
     - Home: 'index.md'
     - Docs:
-        - MAIA Docs: 'docs_home.md'
+      - MAIA Docs: 'docs_home.md'
       - User Registration: 'registration.md'
       - Getting Started: 'setup.md'
       - User Authentication: 'authentication.md'
