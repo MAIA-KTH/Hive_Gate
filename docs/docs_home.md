@@ -1,14 +1,16 @@
 # MAIA Docs
 
-
 ### Welcome to MAIA Official Documentation !
 
-Here you can find useful information on how to request and [register an account](registration.md), correctly [authenticate](authentication.md) and [access](access.md) the *MAIA* cluster.
+Here you can find useful information on how to request and register an account, correctly authenticate and access the *
+MAIA* cluster.
 
 - [User Registration](registration.md)
 - [Getting Started](setup.md)
 - [User Authentication](authentication.md)
 - [Cluster Access](access.md)
 
-PORT FORWARD
-COPY FILE
+You can also find information about the resources access (with port-forwarding) and about the file transfer options
+between a local comoputer and the remote cluster.
+
+- [Resources Access](pod_access.md)
