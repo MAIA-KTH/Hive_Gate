@@ -14,7 +14,7 @@ kubectl cp /LOCAL/FOLDER NAMESPACE/POD_NAME:/REMOTE/FOLDER
 ```
 
 ## File Transfer via SSH
-In case of an established SSH connection with the pod (as described in [SSH Access](pod_access.md#SSH Access)), the SSH file transfer command can be used:
+In case of an established SSH connection with the pod (as described in [SSH Access](resources_access.md#SSH Access)), the SSH file transfer command can be used:
 ```
 scp -P local_SSH_port username@localhost:/REMOTE/FOLDER /LOCAL/FOLDER
 scp -P local_SSH_port /LOCAL/FOLDER username@localhost:/REMOTE/FOLDER 

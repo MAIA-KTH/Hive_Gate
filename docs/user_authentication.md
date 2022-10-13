@@ -1,6 +1,6 @@
 # MAIA User Authentication
 
-After [registering a MAIA account](registration.md), follow the instructions provided to [get started](setup.md) and correctly authenticate to the MAIA cluster.
+After [registering a MAIA account](user_registration.md), follow the instructions provided to [get started](getting_started.md) and correctly authenticate to the MAIA cluster.
 
 ## User Login
 In order to properly authenticate to the cluster, you need to have a proper configuration YAML file saved in `~/.kube/config`.

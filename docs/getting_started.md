@@ -32,4 +32,4 @@ KubeNav provides a GUI to interact, monitor and communicate with the cluster. Th
 *KubeNav Interface*
 
 To install KubeNav, follow the instructions given in the [official website](https://kubenav.io/).
-To properly run, KubeNav requires the YAML configuration file saved as `~/.kube/config` (see [MAIA User Authentication](authentication.md))
+To properly run, KubeNav requires the YAML configuration file saved as `~/.kube/config` (see [MAIA User Authentication](user_authentication.md))
