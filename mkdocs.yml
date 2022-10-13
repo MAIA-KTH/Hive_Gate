@@ -3,12 +3,12 @@ edit_uri: edit/main/docs/
 nav:
     - Home: 'index.md'
     - Docs:
-      - MAIA Docs: 'docs_home.md'
-      - User Registration: 'registration.md'
-      - Getting Started: 'setup.md'
-      - User Authentication: 'authentication.md'
-      - Cluster Access: 'access.md'
-      - Resource Access: 'pod_access.md'
+      - MAIA Docs: 'docs.md'
+      - User Registration: 'user_registration.md'
+      - Getting Started: 'getting_started.md'
+      - User Authentication: 'user_authentication.md'
+      - Cluster Access: 'cluster_access.md'
+      - Resource Access: 'resource_access.md'
       - File Transfer: 'file_transfer.md'
 theme:
   features:
