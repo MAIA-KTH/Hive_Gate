@@ -1,0 +1,54 @@
+site_name: MAIA
+edit_uri: edit/main/docs/
+nav:
+    - Home: 'index.md'
+    - Docs:
+      - MAIA Docs: 'docs_home.md'
+      - User Registration: 'registration.md'
+      - Getting Started: 'setup.md'
+      - User Authentication: 'authentication.md'
+      - Cluster Access: 'access.md'
+      - Resource Access: 'pod_access.md'
+      - File Transfer: 'file_transfer.md'
+theme:
+  features:
+    - navigation.tabs
+    - navigation.top
+    - navigation.instant
+    - navigation.tracking
+    - navigation.expand
+    - navigation.sections
+    - navigation.tabs
+    - toc.integrate
+    - toc.follow
+  favicon: images/MAI_A_logo.png
+  font:
+    text: Ubuntu
+  name: material
+  icon:
+    repo: fontawesome/brands/github
+  logo: img/MAI_A_logo.ico
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+
+
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+repo_url: https://github.com/MAIA-KTH/Hive_Gate
+repo_name: MAIA-KTH/Hive_Gate
+extra:
+  homepage: https://loginapp.k8s-maia.com
+plugins:
+  - git-authors:
+      enabled: true
+  - git-revision-date-localized:
+      enable_creation_date: true
+
