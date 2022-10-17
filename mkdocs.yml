@@ -8,7 +8,7 @@ nav:
       - Getting Started: 'getting_started.md'
       - User Authentication: 'user_authentication.md'
       - Cluster Access: 'cluster_access.md'
-      - Resource Access: 'resource_access.md'
+      - Resource Access: 'resources_access.md'
       - File Transfer: 'file_transfer.md'
 theme:
   features:
