@@ -26,7 +26,7 @@ In order to be able to perform such operations, install Helm following the instr
 
 ## KubeNav installation (optional)
 
-KubeNav provides a GUI to interact, monitor and communicate with the cluster. The simple and intuitive interface make it easy to install and use for users who prefers to use graphical interfaces instead of CLI tools (*kubectl*) to run commands in the cluster.
+KubeNav provides a GUI to interact, monitor and communicate with the cluster. The simple and intuitive interface makes it easy to install and use for users who prefers to use graphical interfaces instead of CLI tools (*kubectl*) to run commands in the cluster.
 
 ![KubeNav Interface](images/KubeNav.png)
 *KubeNav Interface*

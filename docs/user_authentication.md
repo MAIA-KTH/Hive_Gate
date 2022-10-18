@@ -7,7 +7,7 @@ In order to properly authenticate to the cluster, you need to have a proper conf
 This configuration file can be obtained by authentication via the [MAIA login web app](https://loginapp.k8s-maia.com).
 A personal ID token is required to authenticate to the cluster. This token is uniquely assigned to each user and stored in the `config` file.
 
-IMPORTANT: Each ID token is valid for only 48 hours, so you will need to re-authenticate every 2 days, either through the [web app](#A) or with the [command line]
+IMPORTANT: Each ID token is valid for only 48 hours, so you will need to re-authenticate every 2 days, either through the [web app](#Authentication via web browser app) or with the [command line](#Authentication with command line)
 
 ### Authentication via web browser app
 After installing **kubectl**, authenticate through the [MAIA Login](https://loginapp.k8s-maia.com) webpage.
