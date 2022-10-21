@@ -1,0 +1,119 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "hive.fullname" . }}
+  labels:
+  {{- include "hive.labels" . | nindent 4 }}
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+  {{- include "hive.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+      {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+    {{- include "hive.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+      {{- toYaml . | nindent 8 }}
+      {{- end }}
+      volumes:
+         {{- if .Values.persistentVolume}}
+        {{- range $i, $s := .Values.persistentVolume}}
+        - name: hive-persistent-storage-{{$i}}
+          persistentVolumeClaim:
+            claimName: {{ include "hive.fullname" $ }}{{"-claim-"}}{{$i}}
+         {{- end}}
+        {{- end}}
+        {{- if .Values.dshm}}
+        - name: dshm
+          emptyDir:
+            medium: Memory
+        {{- end}}
+        {{- range .Values.extraSecretVolumes }}
+        - name: {{ .name | quote }}
+          secret:
+            secretName: {{ .secretName | quote }}
+        {{- end}}
+        {{- range .Values.extraNFSVolumes }}
+        - name: {{ .name | quote }}
+          nfs:
+            path: {{ .hostPath | quote }}
+            server: {{ .server | quote }}
+      {{- end }}
+      {{- range .Values.extraHostVolumes }}
+        - name: {{ .name | quote }}
+          hostPath:
+            path: {{ .hostPath | quote }}
+            {{- end }}
+      {{- range .Values.extraConfigMapVolumes }}
+        - name: {{ .name | quote }}
+          configMap:
+            name: {{ .configMapName | quote }}
+                 {{- end }}
+      securityContext:
+      {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+          {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          {{- if .Values.extraEnv }}
+          env:
+          {{- toYaml .Values.extraEnv | nindent 12 }}
+          {{- end }}
+          resources:
+          {{- toYaml .Values.resources | nindent 12 }}
+
+          {{- if .Values.extraVolumeMounts }}
+          volumeMounts:
+            {{- if .Values.persistentVolume}}
+            {{- range $i, $s := .Values.persistentVolume}}
+            - name: hive-persistent-storage-{{$i}}
+              mountPath: {{ .mountPath }}
+            {{- end}}
+            {{- end}}
+          {{- toYaml .Values.extraVolumeMounts | nindent 12 }}
+      {{- end }}
+      {{- if .Values.nodeSelected}}
+      nodeSelector:
+        "kubernetes.io/hostname": {{ .Values.nodeSelected}}
+        {{- end}}
+      {{- with .Values.affinity }}
+      affinity:
+      {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+      {{- toYaml . | nindent 8 }}
+  {{- end }}
+{{- if .Values.persistentVolume}}
+{{- range $i, $s := .Values.persistentVolume}}
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "hive.fullname" $ }}{{"-claim-"}}{{$i}}
+  labels:
+    {{- include "hive.selectorLabels" $ | nindent 6 }}
+spec:
+  {{- if .pvc_type}}
+  storageClassName: {{ .pvc_type }}
+  {{- end}}
+  {{- if .access_mode}}
+  accessModes:
+    - {{ .access_mode}}
+    {{- end}}
+  resources:
+    requests:
+      storage: {{ .size }}
+  {{- end }}
+  {{- end }}

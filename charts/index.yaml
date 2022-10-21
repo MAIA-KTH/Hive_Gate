@@ -1,0 +1,15 @@
+apiVersion: v1
+entries:
+  hive:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2022-10-21T08:36:06.0208879+02:00"
+    description: A Helm chart to deploy environments (pods, services, ingresses) and
+      run experiments and applications in MAIA cluster
+    digest: b3214e6ab24a06c4ba081393a27d404e41f739d19736afd87598fd9ee25d9559
+    name: hive
+    type: application
+    urls:
+    - https://maia-kth.github.io/Hive_Gate/hive-1.0.0.tgz
+    version: 1.0.0
+generated: "2022-10-21T08:36:06.0183025+02:00"
