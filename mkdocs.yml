@@ -10,6 +10,8 @@ nav:
       - Cluster Access: 'cluster_access.md'
       - Resource Access: 'resources_access.md'
       - File Transfer: 'file_transfer.md'
+    - Advanced Docs:
+        - Deploy Resources: 'hive_deploy_chart.md'
 theme:
   features:
     - navigation.tabs
@@ -47,6 +49,9 @@ repo_name: MAIA-KTH/Hive_Gate
 extra:
   homepage: https://loginapp.k8s-maia.com
 plugins:
+  - git-committers:
+      repository: MAIA-KTH/Hive_Gate
+      branch: main
   - git-authors:
       enabled: true
   - git-revision-date-localized:

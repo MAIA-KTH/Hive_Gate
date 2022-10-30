@@ -14,3 +14,7 @@ between a local computer and the remote cluster.
 
 - [Resources Access](resources_access.md)
 - [File Transfer](file_transfer.md)
+
+### Advanced Documentation for Admins
+As a Cluster Admin, you can create namespaces for different GitHub Teams, populate them with the Team's user account, deploy applications and resources.
+- [Deploy Resources](hive_deploy_chart.md)
