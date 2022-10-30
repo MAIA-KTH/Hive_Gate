@@ -17,4 +17,5 @@ between a local computer and the remote cluster.
 
 ### Advanced Documentation for Admins
 As a Cluster Admin, you can create namespaces for different GitHub Teams, populate them with the Team's user account, deploy applications and resources.
+
 - [Deploy Resources](hive_deploy_chart.md)

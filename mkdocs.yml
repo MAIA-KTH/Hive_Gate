@@ -10,7 +10,7 @@ nav:
       - Cluster Access: 'cluster_access.md'
       - Resource Access: 'resources_access.md'
       - File Transfer: 'file_transfer.md'
-    - Advanced Docs:
+      - Advanced Docs:
         - Deploy Resources: 'hive_deploy_chart.md'
 theme:
   features:
