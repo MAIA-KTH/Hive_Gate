@@ -57,6 +57,9 @@ spec:
         - name: {{ .name | quote }}
           configMap:
             name: {{ .configMapName | quote }}
+            items:
+              - key: {{ .configMapFile | quote }}
+                path: {{ .configMapPath | quote }}
                  {{- end }}
       securityContext:
       {{- toYaml .Values.podSecurityContext | nindent 8 }}
