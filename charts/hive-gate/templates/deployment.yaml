@@ -71,6 +71,11 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           {{- if .Values.extraEnv }}
           env:
+            {{- if (.Values.gpus) }}
+            {{ else}}
+            - name: NVIDIA_VISIBLE_DEVICES
+              value: ""
+            {{- end}}
           {{- toYaml .Values.extraEnv | nindent 12 }}
           {{- end }}
           resources:
@@ -86,9 +91,19 @@ spec:
             {{- end}}
           {{- toYaml .Values.extraVolumeMounts | nindent 12 }}
       {{- end }}
-      {{- if .Values.nodeSelected}}
+      {{- if  or (.Values.gpuSelected)  (.Values.nodeSelected) }}
       nodeSelector:
+              {{- if .Values.nodeSelected}}
         "kubernetes.io/hostname": {{ .Values.nodeSelected}}
+        {{- end}}
+        {{- if .Values.gpuSelected}}
+        {{- if .Values.gpuSelected.type}}
+        "gpu.type": {{ .Values.gpuSelected.type}}
+        {{- end}}
+        {{- if .Values.gpuSelected.vram}}
+        "gpu.vram": {{ .Values.gpuSelected.vram}}
+        {{- end}}
+        {{- end}}
         {{- end}}
       {{- with .Values.affinity }}
       affinity:

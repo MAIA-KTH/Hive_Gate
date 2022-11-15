@@ -145,6 +145,18 @@ To optionally select which node in the cluster to use for deploying the applicat
 }
 ```
 
+#### GPU Selection
+To optionally select which available GPUs in the cluster to request. `type` and `vram` attribute can be specified (only one of them is needed, both can be included).
+Example: `type: "RTX-2070-Super"`, `vram: "8G"`
+```json
+{
+  "gpu_selector": {
+    "type": "GPU_TYPE",
+    "vram": "VRAM_SIZE"
+  }
+}
+```
+
 #### Ingress
 Used to create an Ingress resources to access the application at the specified port by using an HTTPS address.
 IMPORTANT! The specified DNS needs to be active and connected to the cluster DNS (**".k8s-maia.com"**)
