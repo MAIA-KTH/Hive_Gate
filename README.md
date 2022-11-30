@@ -1,5 +1,7 @@
 # Deploy Custom Environments in MAIA
 
+[![Build](https://github.com/MAIA-KTH/Hive_Gate/actions/workflows/build.yaml/badge.svg)](https://github.com/MAIA-KTH/Hive_Gate/actions/workflows/build.yaml)
+
 To create custom environments and deploy applications in MAIA (including pods, services and ingresses) 
 a Helm chart is available: [Hive_Gate](https://maia-kth.github.io/Hive_Gate/).
 

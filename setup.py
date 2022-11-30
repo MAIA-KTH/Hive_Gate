@@ -12,7 +12,7 @@ def read_file(file):
 setup(
     name="hive-gate",
     version="1.0",
-    url="https://github.com/MAIA-KTH/Hive-Gate.git",
+    url="https://github.com/MAIA-KTH/Hive_Gate.git",
     license="GPLv3",
     author="Simone Bendazzoli",
     author_email="simben@kth.se",
