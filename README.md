@@ -239,7 +239,17 @@ To provide the user information to the Pod:
 ## Deploy Charts
 
 To deploy an Helm Hive Chart, first create a config file according to the specific requirements (as described [above](#Custom Helm values)).
-Then run:
+Then install the **Hive_Gate** package running:
+```
+pip install hive-gate
+```
+Or download the executable file:
+
+[Hive_Gate_deploy_helm_chart (Windows .exe)](https://github.com/MAIA-KTH/Hive_Gate/releases/download/v1.0/Hive_Gate_deploy_helm_chart.exe)
+
+[Hive_Gate_deploy_helm_chart (Ubuntu)](https://github.com/MAIA-KTH/Hive_Gate/releases/download/v1.0/Hive_Gate_deploy_helm_chart)
+
+Finally:
 ```
 Hive_Gate_deploy_helm_chart --config-file /PATH/TO/CONFIG/FILE
 ```
