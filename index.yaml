@@ -3,47 +3,25 @@ entries:
   hive-gate:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2023-01-02T10:17:26.876228412+01:00"
+    created: "2023-01-02T15:50:38.774733986+01:00"
     description: A Helm chart to deploy environments (pods, services, ingresses) and
       run experiments and applications in MAIA cluster
-    digest: 3e74d2bc1c4751774df5f8e824ebab327a14e91a8d556cbbca542dd882cb885a
+    digest: 0aba61216f655e0972462dfb9ba8fd4a2476d376a99a545cf7d4f8d6dd910cfa
     name: hive-gate
     type: application
     urls:
-    - hive-gate-1.0.4.tgz
-    version: 1.0.4
-  - apiVersion: v2
-    appVersion: 1.0.0
-    created: "2023-01-02T10:17:26.87449741+01:00"
-    description: A Helm chart to deploy environments (pods, services, ingresses) and
-      run experiments and applications in MAIA cluster
-    digest: 0d092e84c4f308c283b0627777d95d2843920d8b02ecfe3658ee6e6172c45e45
-    name: hive-gate
-    type: application
-    urls:
-    - hive-gate-1.0.3.tgz
-    version: 1.0.3
-  - apiVersion: v2
-    appVersion: 1.0.0
-    created: "2023-01-02T10:17:26.873644249+01:00"
-    description: A Helm chart to deploy environments (pods, services, ingresses) and
-      run experiments and applications in MAIA cluster
-    digest: a6e9953ab0a57a1550c96baf7cf76d32b24100506407073833319764ee83cba4
-    name: hive-gate
-    type: application
-    urls:
-    - hive-gate-1.0.2.tgz
-    version: 1.0.2
+    - hive-gate-1.0.5.tgz
+    version: 1.0.5
   hive-gate-kaniko:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-01-02T10:17:26.87696828+01:00"
+    created: "2023-01-02T15:50:38.775201691+01:00"
     description: A Helm chart to deploy Kaniko Pod in MAIA cluster, used to build
       Docker Images and deploy to the private Docker Registry
-    digest: 3f708a442d1d278c9abcc594d8bab3e50be1664440c4106064eb2a4873bea847
+    digest: aa3387cb56e6436ff8738d25e5cd82f54c00bb98e17af63de415f99b41bbbc44
     name: hive-gate-kaniko
     type: application
     urls:
-    - hive-gate-kaniko-0.1.0.tgz
-    version: 0.1.0
-generated: "2023-01-02T10:17:26.873014792+01:00"
+    - hive-gate-kaniko-0.2.0.tgz
+    version: 0.2.0
+generated: "2023-01-02T15:50:38.773710059+01:00"
