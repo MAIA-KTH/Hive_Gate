@@ -3,13 +3,13 @@
 [![Build](https://github.com/MAIA-KTH/Hive_Gate/actions/workflows/build.yaml/badge.svg)](https://github.com/MAIA-KTH/Hive_Gate/actions/workflows/build.yaml)
 
 To create custom environments and deploy applications in MAIA (including pods, services and ingresses) 
-a Helm chart is available: [Hive_Gate](https://github.com/MAIA-KTH/Hive_Gate).
+a Helm chart is available: [Hive_Gate](https://maia-kth.github.io/Hive_Gate/).
 
 With the **Hive_Gate** chart it is possible to deploy any *Docker Image* as a Pod, expose the required ports as services, mount persistent volumes on the specified locations and optionally create Ingress resources to expose the application to the external traffic using the HTTPS protocol.
 
 To add the chart to Helm, run:
 ```
-helm repo add hive-gate https://github.com/MAIA-KTH/Hive_Gate
+helm repo add hive-gate https://maia-kth.github.io/Hive_Gate/
 helm repo update
 ```
 
