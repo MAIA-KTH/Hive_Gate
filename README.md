@@ -3,13 +3,13 @@
 [![Build](https://github.com/MAIA-KTH/Hive_Gate/actions/workflows/build.yaml/badge.svg)](https://github.com/MAIA-KTH/Hive_Gate/actions/workflows/build.yaml)
 
 To create custom environments and deploy applications in MAIA (including pods, services and ingresses) 
-a Helm chart is available: [Hive_Gate](https://maia-kth.github.io/Hive_Gate/).
+a Helm chart is available: [Hive_Gate](https://github.com/MAIA-KTH/Hive_Gate).
 
 With the **Hive_Gate** chart it is possible to deploy any *Docker Image* as a Pod, expose the required ports as services, mount persistent volumes on the specified locations and optionally create Ingress resources to expose the application to the external traffic using the HTTPS protocol.
 
 To add the chart to Helm, run:
 ```
-helm repo add hive-gate https://maia-kth.github.io/Hive_Gate/
+helm repo add hive-gate https://github.com/MAIA-KTH/Hive_Gate
 helm repo update
 ```
 
@@ -42,7 +42,16 @@ To specify the Docker image to deploy
   "docker_image": "DOCKER_IMAGE"
 }
 ```
-
+In case of a custom Docker image, provide the docker build context ( the folder path containing the *Dockerfile* and all the required files), and the corresponding custom
+ image name. The built Docker image is pushed to the private docker registry.
+```json
+{
+  "docker_image": {
+    "context_folder": "/PATH/TO/MY/DOCKER_CONTEXT",
+    "image_name": "my-custom-image"
+  }
+}
+```
 #### Requested Resources [Required]
 To request resources (RAM,CPU and optionally GPU).
 ```json
@@ -247,7 +256,7 @@ Or download the executable file:
 
 [Hive_Gate_deploy_helm_chart (Windows .exe)](https://github.com/MAIA-KTH/Hive_Gate/releases/download/v1.0/Hive_Gate_deploy_helm_chart.exe)
 
-[Hive_Gate_deploy_helm_chart (Ubuntu)](https://github.com/MAIA-KTH/Hive_Gate/releases/download/v1.0/Hive_Gate_deploy_helm_chart)
+[Hive_Gate_deploy_helm_chart (Ubuntu)](https://gits-15.sys.kth.se/MAIA/Hive_Gate/releases/download/v1.1/Hive_Gate_deploy_helm_chart)
 
 Finally:
 ```
