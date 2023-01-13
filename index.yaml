@@ -3,13 +3,25 @@ entries:
   hive-gate:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2023-01-09T16:36:49.129196775+01:00"
+    created: "2023-01-13T11:14:19.37962783+01:00"
     description: A Helm chart to deploy environments (pods, services, ingresses) and
       run experiments and applications in MAIA cluster
-    digest: 95819c37c2b794c6ba0d9f2f582de53325c23180594c947ce6153697317ce598
+    digest: 76fb9a8175bf1b9a79102df96b5fe42fb3d4ac4f658c5028d3b0c742bae80403
     name: hive-gate
     type: application
     urls:
     - hive-gate-1.0.6.tgz
     version: 1.0.6
-generated: "2023-01-09T16:36:49.128500061+01:00"
+  hive-gate-kaniko:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-01-13T11:14:19.380097181+01:00"
+    description: A Helm chart to deploy Kaniko Pod in MAIA cluster, used to build
+      Docker Images and deploy to the private Docker Registry
+    digest: f018b899ae3e2f7d0f3b960babc3e923783144062a54cd14081d56d5e2810582
+    name: hive-gate-kaniko
+    type: application
+    urls:
+    - hive-gate-kaniko-0.2.0.tgz
+    version: 0.2.0
+generated: "2023-01-13T11:14:19.378972832+01:00"
