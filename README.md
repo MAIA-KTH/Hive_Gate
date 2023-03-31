@@ -2,10 +2,12 @@
 
 [![Build](https://github.com/MAIA-KTH/Hive_Gate/actions/workflows/build.yaml/badge.svg)](https://github.com/MAIA-KTH/Hive_Gate/actions/workflows/build.yaml)
 
-To create custom environments and deploy applications in MAIA (including pods, services and ingresses) 
+To create custom environments and deploy applications in MAIA (including pods, services and ingresses)
 a Helm chart is available: [Hive_Gate](https://maia-kth.github.io/Hive_Gate/).
 
-With the **Hive_Gate** chart it is possible to deploy any *Docker Image* as a Pod, expose the required ports as services, mount persistent volumes on the specified locations and optionally create Ingress resources to expose the application to the external traffic using the HTTPS protocol.
+With the **Hive_Gate** chart it is possible to deploy any *Docker Image* as a Pod, expose the required ports as
+services, mount persistent volumes on the specified locations and optionally create Ingress resources to expose the
+application to the external traffic using the HTTPS protocol.
 
 To add the chart to Helm, run:
 ```
@@ -126,25 +128,48 @@ Request PVC:
     {
       "mountPath": "/mount/path_2",
       "size": "VOLUME_SIZE",
-      "access_mode": "ACCESS_TYPE",
-      "pvc_type": "STORAGE_CLASS"
+     "access_mode": "ACCESS_TYPE",
+     "pvc_type": "STORAGE_CLASS"
     }
   ]
 }
 ```
-**"STORAGE_CLASS"** can be any of the storage classes available on the cluster: 
+
+**"STORAGE_CLASS"** can be any of the storage classes available on the cluster:
+
 ```
 kubectl get sc
 ```
-#### Mounted files
-Single files can be mounted inside the Pod. First, a ConfigMap including the file is created, and then it is mounted into the Pod.
+
+#### Existing Persistent Volumes
+
+Previously created pv can be mounted into multiple pods (ONLY if the *access mode* was previously set to **ReadWriteMany
+**)
 
 ```json
 {
-  "mount_files":
+ "existing_persistent_volume": [
   {
-    "file_name": ["/local/file/path","/file/mount/path"]
+   "name": "EXISTING_PVC_NAME",
+   "mountPath": "/mount/path"
   }
+ ]
+}
+```
+
+#### Mounted files
+
+Single files can be mounted inside the Pod. First, a ConfigMap including the file is created, and then it is mounted
+into the Pod.
+
+```json
+{
+ "mount_files": {
+  "file_name": [
+   "/local/file/path",
+   "/file/mount/path"
+  ]
+ }
 }
 ```
 
@@ -169,16 +194,22 @@ Example: `type: "RTX-2070-Super"`, `vram: "8G"`
 ```
 
 #### Ingress
+
 Used to create an Ingress resources to access the application at the specified port by using an HTTPS address.
+
 IMPORTANT! The specified DNS needs to be active and connected to the cluster DNS (**".k8s-maia.com"**)
+
+IMPORTANT! *oauth_url* should be explicitly specified, since only oauth-based authenticated users can be authorized
+through the ingress.
+Contact the MAIA admin to retrieve this information.
 
 ```json
 {
-  "ingress": 
-  {
-    "host": "SUBDOMAIN.k8s-maia.com",
-    "port": "SERVICE_PORT"
-  }
+ "ingress": {
+  "host": "SUBDOMAIN.k8s-maia.com",
+  "port": "SERVICE_PORT",
+  "oauth_url": "oauth.MY_NAMESPACE"
+ }
 }
 ```
 
@@ -252,11 +283,12 @@ Then install the **Hive_Gate** package running:
 ```
 pip install hive-gate
 ```
+
 Or download the executable file:
 
-[Hive_Gate_deploy_helm_chart (Windows .exe)](https://github.com/MAIA-KTH/Hive_Gate/releases/download/v1.0/Hive_Gate_deploy_helm_chart.exe)
+[Hive_Gate_deploy_helm_chart (Windows .exe)](https://gits-15.sys.kth.se/MAIA/Hive_Gate/releases/download/v1.3/Hive_Gate_deploy_helm_chart.exe)
 
-[Hive_Gate_deploy_helm_chart (Ubuntu)](https://gits-15.sys.kth.se/MAIA/Hive_Gate/releases/download/v1.1/Hive_Gate_deploy_helm_chart)
+[Hive_Gate_deploy_helm_chart (Ubuntu)](https://gits-15.sys.kth.se/MAIA/Hive_Gate/releases/download/v1.3/Hive_Gate_deploy_helm_chart)
 
 Finally:
 ```
