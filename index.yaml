@@ -1,5 +1,17 @@
 apiVersion: v1
 entries:
+  hive-namespace:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2023-10-04T18:19:33.1359375+02:00"
+    description: A Helm chart to create a complete Namespace in MAIA cluster, deploying
+      all the default MAIA components.
+    digest: e84870db8e4cf5957c24c5797caf0447a0fe8c7eab6bcea741934a4fd430f7f7
+    name: hive-namespace
+    type: application
+    urls:
+    - hive-namespace-1.0.0.tgz
+    version: 1.0.0
   hive-gate:
   - apiVersion: v2
     appVersion: 1.0.0
