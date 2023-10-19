@@ -324,6 +324,17 @@ entries:
   hive-gate-kaniko:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2023-10-19T16:40:41.8204195+02:00"
+    description: A Helm chart to deploy Kaniko Pod in MAIA cluster, used to build
+      Docker Images and deploy to the private Docker Registry
+    digest: ccdfebf4e69bf69141df59195f2d848c4d43327dd66acb8be801678a7e63d726
+    name: hive-gate-kaniko
+    type: application
+    urls:
+    - hive-gate-kaniko-0.2.6.tgz
+    version: 0.2.6
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2023-10-19T16:28:37.9649779+02:00"
     description: A Helm chart to deploy Kaniko Pod in MAIA cluster, used to build
       Docker Images and deploy to the private Docker Registry
