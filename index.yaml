@@ -246,6 +246,17 @@ entries:
   hive-gate:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2023-10-27T15:01:51.8372193+02:00"
+    description: A Helm chart to deploy environments (pods, services, ingresses) and
+      run experiments and applications in MAIA cluster
+    digest: 4c9c7666ce828e9c5e2ca6802b301becd73827b7a48192987e8111f337d92651
+    name: hive-gate
+    type: application
+    urls:
+    - hive-gate-1.0.13.tgz
+    version: 1.0.13
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2023-10-27T14:43:38.8122371+02:00"
     description: A Helm chart to deploy environments (pods, services, ingresses) and
       run experiments and applications in MAIA cluster
